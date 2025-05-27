@@ -32,7 +32,7 @@ $recent_news = $pdo->query("SELECT * FROM news ORDER BY published_at DESC LIMIT 
                 </div>
                 <div>
                     <span>Welcome, <?php echo htmlspecialchars($_SESSION['admin_username']); ?></span>
-                    <a href="admin_logout.php" class="btn btn-secondary" style="margin-left: 1rem;">Logout</a>
+                    <a href="index.php" class="btn btn-secondary" style="margin-left: 1rem;">Logout</a>
                 </div>
             </div>
             <nav class="admin-nav">

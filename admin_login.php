@@ -6,7 +6,6 @@ require_once 'config.php';
 $error = '';
 
 if ($_POST) {
-    // Убираем пробелы по краям
     $username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $password = isset($_POST['password']) ? trim($_POST['password']) : '';
     
@@ -16,7 +15,6 @@ if ($_POST) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            // Отладочный вывод — удалить после теста
             var_dump('Entered password:', $password);
             var_dump('Password hash from DB:', $user['password']);
             var_dump('password_verify result:', password_verify($password, $user['password']));
@@ -36,7 +34,6 @@ if ($_POST) {
     }
 }
 
-// If already logged in, redirect to dashboard
 if (isLoggedIn()) {
     header('Location: admin_dashboard.php');
     exit();
